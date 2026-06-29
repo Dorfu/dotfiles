@@ -1,0 +1,34 @@
+# dotfiles
+
+My terminal setup — WezTerm + tmux. Cross-platform (Windows/WSL and macOS).
+
+## Contents
+
+- `wezterm/wezterm.lua` — WezTerm config (rose-pine-moon, Hack Nerd Font, custom copy/paste & maximize keys). Launches into WSL Ubuntu on Windows; uses the default shell on macOS.
+- `wezterm/fonts/` — Hack Nerd Font, loaded by WezTerm via `font_dirs` (no system install required).
+- `tmux/tmux.conf` — prefix remapped to `Ctrl+a`, vim-style pane keys.
+
+## Install (macOS / Linux / WSL)
+
+```sh
+git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+The script symlinks `~/.wezterm.lua` and `~/.tmux.conf`, copies the fonts into
+`~/.config/wezterm/fonts` (and `~/Library/Fonts` on macOS), and backs up any
+existing files.
+
+## Key bindings
+
+### WezTerm
+- `Ctrl+C` — copy if text selected, else interrupt (SIGINT)
+- `Ctrl+V` — paste
+- `Ctrl+Shift+M` — maximize window
+- `Ctrl+Shift+F` / `Alt+Enter` — toggle full-screen
+
+### tmux (prefix = `Ctrl+a`)
+- `Ctrl+a |` — split side-by-side
+- `Ctrl+a -` — split top/bottom
+- `Ctrl+a h/j/k/l` — move between panes
