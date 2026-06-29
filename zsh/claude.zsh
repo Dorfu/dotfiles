@@ -1,8 +1,15 @@
 # Claude Code session helpers
 
-# Start a new Claude session, optionally named:  cc            |  cc dotfiles
+# Claude session dispatcher:
+#   cc            -> start a new session
+#   cc ls         -> list all sessions with IDs and titles
+#   cc <name>     -> start a new session with that name
 cc() {
-  if [ -n "$1" ]; then claude --name "$1"; else claude; fi
+  case "$1" in
+    "")  claude ;;
+    ls)  ccls ;;
+    *)   claude --name "$1" ;;
+  esac
 }
 
 # Resume a session by name/search term (or open the picker):  ccr  |  ccr dotfiles
