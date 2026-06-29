@@ -7,6 +7,7 @@ My terminal setup — WezTerm + tmux. Cross-platform (Windows/WSL and macOS).
 - `wezterm/wezterm.lua` — WezTerm config (rose-pine-moon, Hack Nerd Font, custom copy/paste & maximize keys). Launches into WSL Ubuntu on Windows; uses the default shell on macOS.
 - `wezterm/fonts/` — Hack Nerd Font, loaded by WezTerm via `font_dirs` (no system install required).
 - `tmux/tmux.conf` — prefix remapped to `Ctrl+a`, vim-style pane keys.
+- `zsh/claude.zsh` — Claude Code session helpers (`cc`, `ccr`, `ccname`, `ccls`).
 
 ## Install (macOS / Linux / WSL)
 
@@ -32,3 +33,9 @@ existing files.
 - `Ctrl+a |` — split side-by-side
 - `Ctrl+a -` — split top/bottom
 - `Ctrl+a h/j/k/l` — move between panes
+
+### Claude Code helpers (zsh)
+- `cc [name]` — start a new session, optionally named
+- `ccr [term]` — resume a session by name/search term (or open the picker)
+- `ccname <id> <name>` — rename an existing session
+- `ccls` — list all sessions with their IDs and titles

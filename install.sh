@@ -33,4 +33,11 @@ fi
 # tmux config
 link "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
 
-echo "Done. Reload tmux with: tmux source-file ~/.tmux.conf"
+# zsh: source the Claude helpers from ~/.zshrc (idempotent)
+ZSH_LINE='[ -f "$HOME/dotfiles/zsh/claude.zsh" ] && source "$HOME/dotfiles/zsh/claude.zsh"'
+if [ -f "$HOME/.zshrc" ] && ! grep -qF 'dotfiles/zsh/claude.zsh' "$HOME/.zshrc"; then
+  printf '\n# Claude Code session helpers (from dotfiles)\n%s\n' "$ZSH_LINE" >> "$HOME/.zshrc"
+  echo "added Claude helpers source line to ~/.zshrc"
+fi
+
+echo "Done. Reload tmux with: tmux source-file ~/.tmux.conf, and restart your shell."
