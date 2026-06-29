@@ -34,8 +34,12 @@ existing files.
 - `Ctrl+a -` — split top/bottom
 - `Ctrl+a h/j/k/l` — move between panes
 
-### Claude Code helpers (zsh)
-- `cc [name]` — start a new session, optionally named
-- `ccr [term]` — resume a session by name/search term (or open the picker)
-- `ccname <id> <name>` — rename an existing session
-- `ccls` — list all sessions with their IDs and titles
+### Claude Code session manager (zsh)
+Name → uuid aliases on top of `claude` (store: `~/.config/cc/sessions.tsv`).
+- `cc ls` — list saved name → uuid aliases
+- `cc <name>` — resume the aliased conversation
+- `cc new <name>` — start a brand-new session with a fixed uuid and launch it
+- `cc add <name> <uuid>` — map a name to an existing session
+- `cc rename <old> <new>` (alias `cc mv`) — rename an alias, keeps the uuid
+- `cc rm <name>` — drop the alias only (conversation untouched)
+- `cc scan` — list recent on-disk sessions with a first-message hint (to find uuids)
