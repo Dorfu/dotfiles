@@ -11,7 +11,7 @@ My terminal setup — WezTerm + tmux. Cross-platform (Windows/WSL and macOS).
 ## Install (macOS / Linux / WSL)
 
 ```sh
-git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
+git clone https://github.com/Dorfu/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./install.sh
 ```
